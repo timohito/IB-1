@@ -1,0 +1,61 @@
+﻿<Window x:Class="IB1.AuthWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IB1"
+        mc:Ignorable="d"
+        Title="Авторизация" Height="400" Width="300">
+    <Window.Resources>
+        <Style TargetType="TextBox">
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="Background" Value="White"/>
+                <Setter Property="Foreground" Value="#003466"/>
+                <Setter Property="BorderBrush" Value="#003466"/>
+                <Setter Property="MinWidth" Value="120"/>
+                <Setter Property="FontSize" Value="15px"/>
+            </Style>
+            <Style TargetType="Label">
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="Background" Value="White"/>
+                <Setter Property="FontSize" Value="15px"/>
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="MaxWidth" Value="120"/>
+                <Setter Property="MaxHeight" Value="40"/>
+                <Setter Property="FontSize" Value="15px"/>
+            </Style>
+            <Style TargetType="PasswordBox">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="#003466"/>
+            <Setter Property="BorderBrush" Value="#003466"/>
+            <Setter Property="MinWidth" Value="120"/>
+            <Setter Property="FontSize" Value="15px"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Content="Логин:" />
+        <TextBox x:Name="TextBoxLogin" Grid.Row="0" Grid.Column="1" LostFocus="TextBoxLogin_LostFocus"/>
+        <Label x:Name="LabelPassword" Grid.Row="1" Grid.Column="0" Content="Пароль:" />
+        <PasswordBox x:Name="TextBoxPassword" Grid.Column="1" Grid.Row="1" />
+        <Label x:Name="LabelPasswordRetype" Grid.Row="2" Grid.Column="0" Content="Повторите пароль:" Visibility="Collapsed" />
+        <PasswordBox x:Name="TextBoxPasswordRetype" Grid.Column="1" Grid.Row="2" Visibility="Collapsed"/>
+        <Button x:Name="buttonOk" Content="Войти" Grid.Row="3" Grid.Column="0" Click="buttonOk_Click"/>
+        <Button x:Name="buttonCancel"  Content="Отмена" Grid.Row="3" Grid.Column="1" Click="buttonCancel_Click"/>
+
+    </Grid>
+</Window>
